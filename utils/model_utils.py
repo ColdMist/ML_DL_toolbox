@@ -58,7 +58,7 @@ def build_tf_preprocessing(input_data):
 
     return inputs
 
-def build_model(input = None, output = None):
+def build_model_tf(input = None, output = None):
   if (input != None and output != None):
     model = keras.Sequential([
         keras.layers.Flatten(input_shape=(input,)),
