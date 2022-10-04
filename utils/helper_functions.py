@@ -44,7 +44,7 @@ def process_data_for_ml(data):
 
         for i in data.index:
             try:
-                #print(float(data.loc[i, var]))
+                float(data.loc[i, var])
                 #print('here')
                 numeric_value_count+=1
             except:
@@ -60,6 +60,7 @@ def process_data_for_ml(data):
         else:
             actual_categorical_variable.append(var)
     numerical_variables = list(set(column_names) - set(actual_categorical_variable))
+    #print(numerical_variables)
     label_encoders = dict()
     categorical_mapping = dict()
     for var in actual_categorical_variable:
